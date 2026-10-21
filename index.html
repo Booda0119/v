@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AJZA ALHASB JAILBREAK 0558028009</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url('image.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100% 100%;
+    overflow: hidden;
+    background-color: #252526;
+    color: #1f1f1f;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    text-align: center;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+    z-index: 0;
+}
+body > * {
+    position: relative;
+    z-index: 1;
+
+}
+#msgs {
+    /* Keeps the top-center area clear for the jailbreak/loading process. */
+    width: min(760px, 80vw);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+}
+</style>
+
+</head>
+<body>
+<script>
+var uaFull = navigator.userAgent;
+var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
+var isPS4 = match !== null;
+var fwVersion = isPS4 ? match[1] : "Unknown";
+var fwNum = parseFloat(fwVersion);
+
+function onScriptError() {
+    msgs.innerHTML = "Content not Found! - Clear Browser Data and Re-Install Cache ...";
+}
+
+if (!isPS4) {
+    document.addEventListener("DOMContentLoaded", () => {
+        msgs.innerHTML = "Only for PS4 with Firmware 10.00 to 11.02";
+    });
+} else {
+    if (window.applicationCache.status == '0') {
+         if (fwNum >= 10.00 && fwNum <= 11.02) {
+            window.location.replace("cachecss.html");
+        } else {
+            document.addEventListener("DOMContentLoaded", () => {
+                msgs.innerHTML = 'Unsupported Firmware: <span style="color: red;">' + fwVersion + '</span>';
+            });
+        }
+    } else {
+        if (fwNum >= 10.00 && fwNum <= 11.02) {
+            var script = document.createElement('script');
+            script.src = "css/main.js";
+            script.onerror = onScriptError;
+            script.onload = function () {
+                setTimeout(function () {
+                    doJb();
+                }, 500);
+            };
+            document.head.appendChild(script);
+        }
+    }
+}
+</script>
+<h1 style="margin-top: 30px;">AJZA ALHASB JAILBREAK</h1>
+<br>
+<h1 id="msgs" class="rainbow-text" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">
+    جاري تحميل GoldHEN v2.4b18.11... يرجى الانتظار
+</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<div class="loader-wrapper"> <!-- حاوية شريط التحميل --> 
+    <div class="top-loading-container" id="loading-container"> 
+        <div class="top-loading-bar"></div> 
+    </div> 
+</div> 
+
+<style> 
+/* الحاوية الرئيسية لتثبيت الشريط في أعلى المنتصف */ 
+.loader-wrapper { 
+    position: fixed; 
+    top: 80px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 9999; 
+    width: 90%; 
+    max-width: 400px; 
+} 
+/* حاوية شريط التحميل */ 
+.top-loading-container { 
+    width: 200px; 
+    height: 4px; 
+    background-color: #313030; 
+    overflow: hidden; 
+    border-radius: 2px; 
+    margin: 0 auto; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+} 
+/* شريط التحميل الداخلي وحركته لـ 6 ثانية (تم التعديل هنا) */ 
+.top-loading-bar { 
+    width: 100%; 
+    height: 100%; 
+    background-color: #1ccb88; 
+    animation: progressLoader 6s linear forwards; 
+} 
+/* حركة التعبئة من اليسار لليمين */ 
+@keyframes progressLoader { 
+    0% { transform: translateX(-100%); } 
+    100% { transform: translateX(0%); } 
+} 
+</style> 
+
+<script> 
+(function() { 
+    const containerElement = document.getElementById("loading-container"); 
+    // إخفاء شريط التحميل نهائياً بعد مرور 6 ثانية = 6000 ميلي ثانية (تم التعديل هنا) 
+    setTimeout(() => { 
+        if (containerElement) { 
+            containerElement.style.opacity = '0'; 
+            containerElement.style.transform = 'scaleY(0)'; 
+            setTimeout(() => { 
+                containerElement.style.display = 'none'; 
+            }, 300); // وقت الاختفاء الناعم 
+        } 
+    }, 6000); 
+})(); 
+</script>
